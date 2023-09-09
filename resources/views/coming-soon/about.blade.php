@@ -19,22 +19,18 @@
 
             {{-- instagram carrousel --}}
 
-            <div class="team-section row">
-                <div class="team">
-                    <img src="dummy/team-1.jpg" alt="Martin Lorenz" class="team-image">
-                    <h2 class="team-name">Martin Lorenz</h2>
+            <div class="pizza-section row">
+                <div class="pizza col-12">
+                    <img src="images/pizza-1.jpg" alt="Martin Lorenz" class="pizza-image">
+                    <h2 class="pizza-name">NDUJA</h2>
                 </div>
-                <div class="team">
-                    <img src="dummy/team-2.jpg" alt="Tina Montgomery" class="team-image">
-                    <h2 class="team-name">Tina Montgomery</h2>
+                <div class="pizza col-12">
+                    <img src="images/pizza-2.jpg" alt="Tina Montgomery" class="pizza-image">
+                    <h2 class="pizza-name">MEATHEAD</h2>
                 </div>
-                <div class="team">
-                    <img src="dummy/team-3.jpg" alt="Peter Wang" class="team-image">
-                    <h2 class="team-name">Peter Wang</h2>
-                </div>
-                <div class="team">
-                    <img src="dummy/team-4.jpg" alt="Sarah Stone" class="team-image">
-                    <h2 class="team-name">Sarah Stone</h2>
+                <div class="pizza col-12">
+                    <img src="images/pizza-3.jpg" alt="Peter Wang" class="pizza-image">
+                    <h2 class="pizza-name">OG</h2>
                 </div>
             </div>
 

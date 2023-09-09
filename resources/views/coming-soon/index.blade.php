@@ -30,7 +30,7 @@
 
 @section('footer')
 <form action="#" class="subscribe-form">
-    <input type="text" placeholder="Enter your email to join our newsletter">
+    <input type="text" placeholder="Your best email">
     <i class="fa fa-envelope"></i>
     <input type="submit" value="Subscribe!">
 </form>
