@@ -8,7 +8,7 @@
     <link rel="icon" href="/images/logo.ico" type="image/x-icon">
 
     <title>
-        @yield('title', 'Pumba\'s Pizza')
+        @yield('title', '') - Pumba\'s Pizza
     </title>
 
     <!-- Loading third party -->

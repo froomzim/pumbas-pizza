@@ -9,7 +9,7 @@
                 We're Preparing Something New. <br> <span>Stay Tuned!</span>
             </h1>
 
-            <div class="counter-wrap" data-date-target="Dec 31, 2023 10:00:00">
+            <div class="counter-wrap hidden" data-date-target="Dec 31, 2023 10:00:00">
                 <article class="counter days">
                     <div class="number">00</div>
                     <div class="caption">Days</div>
@@ -41,5 +41,7 @@
         <i class="fa fa-envelope"></i>
         <input type="submit" value="Subscribe!">
     </form>
+@endsection
 
+@section('additional-scripts')
 @endsection
