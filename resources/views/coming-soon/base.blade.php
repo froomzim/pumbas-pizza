@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
@@ -12,7 +11,8 @@
         @yield('title', 'Pumba\'s Pizza')
     </title>
 
-    <!-- Loading third party fonts -->
+    <!-- Loading third party -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css">
     <link href="/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- Loading main css file -->
@@ -33,9 +33,9 @@
                         <img src="/images/logo.png" alt="Logo" class="logo-image">
                     </a>
                 </div>
-                <a href="{{ route('coming-soon.contact') }}" class="button">Contact</a>
-            </div> <!-- .container -->
-        </header> <!-- .site-header -->
+                <a href="{{ route('contact.index') }}" class="button">Contact</a>
+            </div>
+        </header>
 
         @yield('main-content')
 
@@ -45,21 +45,33 @@
                 @yield('footer')
 
                 <div class="social-links">
-                    <a href="{{ url('https://www.facebook.com/profile.php?id=100075500664603') }}"><i class="fa fa-facebook"></i></a>
+                    <a href="{{ url('https://www.facebook.com/profile.php?id=100075500664603') }}"><i
+                            class="fa fa-facebook"></i></a>
                     <a href="{{ url('https://www.instagram.com/pumbaspizza/') }}"><i class="fa fa-instagram"></i></a>
-                </div> <!-- .social-links -->
+                </div>
 
                 <div class="colophon">Copyright {{ now()->format('Y') }} <b>Pumba's Pizza</b> . All right reserved</div>
 
-            </div> <!-- .container -->
-        </footer> <!-- .site-footer -->
+            </div>
+        </footer>
 
     </div>
 
     <script src="/js/jquery-1.11.1.min.js"></script>
     <script src="/js/plugins.js"></script>
     <script src="/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js"></script>
+    @yield('additional-scripts')
 
+    <script>
+        @if (session('success'))
+            Swal.fire(
+                'Success!',
+                '{{ session('success') }}',
+                'success'
+            )
+        @endif
+    </script>
 </body>
 
 </html>

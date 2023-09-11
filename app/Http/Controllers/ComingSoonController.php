@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use App\Models\Newsletter;
+
 class ComingSoonController extends Controller
 {
     /**
@@ -21,8 +24,16 @@ class ComingSoonController extends Controller
         ]);
     }
 
-    public function contact()
+    public function store(Request $request)
     {
-        return view('coming-soon.contact');
+        $request->validate([
+            'email' => 'required|email|max:255',
+        ]);
+
+        $contact = new Newsletter();
+        $contact->email = $request->input('email');
+        $contact->save();
+
+        return redirect()->back()->with('success', 'You have been subscribed successfully.');
     }
 }

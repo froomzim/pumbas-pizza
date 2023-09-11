@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ComingSoonController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,4 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('', [ComingSoonController::class, 'index'])->name('coming-soon.index');
 Route::get('about', [ComingSoonController::class, 'about'])->name('coming-soon.about');
-Route::get('contact', [ComingSoonController::class, 'contact'])->name('coming-soon.contact');
+Route::get('contact', [ContactController::class, 'contact'])->name('contact.index');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+Route::post('/newsletter', [ComingSoonController::class, 'store'])->name('newsletter.store');
