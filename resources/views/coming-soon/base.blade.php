@@ -65,11 +65,18 @@
 
     <script>
         @if (session('success'))
-            Swal.fire(
-                'Success!',
-                '{{ session('success') }}',
-                'success'
-            )
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: '{{ session('success') }}',
+            });
+        @elseif (session('error'))
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: '{{ session('error') }}',
+
+            })
         @endif
     </script>
 </body>

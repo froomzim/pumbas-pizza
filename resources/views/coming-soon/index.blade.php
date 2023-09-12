@@ -35,7 +35,7 @@
 @endsection
 
 @section('footer')
-    <form action="{{ route('newsletter.store') }}" method="POST" class="subscribe-form">
+    <form action="{{ route('newsletter.store') }}" id="newsletter" method="POST" class="subscribe-form">
         @csrf
         <input type="email" name="email" placeholder="Enter Your Best Email" required>
         <i class="fa fa-envelope"></i>
@@ -44,4 +44,38 @@
 @endsection
 
 @section('additional-scripts')
+<script>
+    $(document).ready(function() {
+        $('#newsletter').submit(function(e) {
+            e.preventDefault();
+            var form = $(this);
+            var url = form.attr('action');
+            var method = form.attr('method');
+            var data = form.serialize();
+            $.ajax({
+                url: url,
+                method: method,
+                data: data,
+                success: function(response) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Thank you!',
+                        text: 'You have successfully subscribed to our newsletter.'
+                        showConfirmButton: false,
+                        timer: 2500
+                    });
+                    form.trigger('reset');
+                },
+                error: function(response) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: response.responseJSON.message,
+                    });
+                }
+            });
+        });
+    });
+
+</script>
 @endsection

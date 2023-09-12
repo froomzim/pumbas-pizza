@@ -30,7 +30,9 @@ class ContactController extends Controller
         $contact->message = $request->input('message');
         $contact->save();
 
-        return redirect()->back()->with('success', 'Your message has been sent successfully.');
+        session()->flash('message', 'Your message has been sent successfully.');
+
+        return redirect()->back()->with('message', 'Your message has been sent successfully.');
     }
 }
 
